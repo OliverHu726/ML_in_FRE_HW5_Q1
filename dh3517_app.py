@@ -12,6 +12,7 @@ for n in range(len(df)):
     else:
         Accurate_status.append(0)
 df['Accurate'] = Accurate_status
+df['Pclass'] = df['Pclass'].astype(str)
 total_acc = sum(Accurate_status) / len(Accurate_status)
 
 def calculate_accuracy(data, category):
