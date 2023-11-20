@@ -25,7 +25,7 @@ selected_category = st.selectbox('Select a category:', ['Sex', 'Pclass'])
 # Calculate accuracy based on the selected category
 acc_metric = calculate_accuracy(df, selected_category)
 # Display results
-st.write(f'Total Accuracy: {total_acc}')
+st.write('Total Accuracy: ', total_acc)
 for i in range(acc_metric.shape[0]):
-    st.write(f'acc_metric.index[i] Accuracy: {acc_metric[i]}')
+    st.write(acc_metric.index[i], ' Accuracy: ', acc_metric[i])
 
