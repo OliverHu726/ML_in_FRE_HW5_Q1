@@ -14,7 +14,7 @@ for n in range(len(df)):
 total_acc = sum(Accurate_status) / len(Accurate_status)
 
 def calculate_accuray(data, category):
-  acc_metric = data.groupby(category).mean()[category]
+  acc_metric = data.groupby(category).mean()["Accurate"]
   return acc_metric
   
 st.title('Titanic ML Project Analysis')
