@@ -22,7 +22,9 @@ st.title('Titanic ML Project Analysis')
 # Dropdown menu
 selected_category = st.selectbox('Select a category:', ['Sex', 'Pclass'])
 # Calculate accuracy based on the selected category
-group_acc_metric = calculate_accuracy(df, selected_category)
+acc_metric = calculate_accuracy(df, selected_category)
 # Display results
 st.write(f'Total Accuracy: {total_acc}')
-st.write(f'Per-{selected_category} Accuracy: {group_acc_metric}')
+for i in range(acc_metric.shape[0]):
+    st.write(f'{acc_metric.index[i]} Accuracy: {acc_metric[i]}')
+
