@@ -11,9 +11,10 @@ for n in range(len(df)):
         Accurate_status.append(1)
     else:
         Accurate_status.append(0)
+df['Accurate'] = Accurate_status
 total_acc = sum(Accurate_status) / len(Accurate_status)
 
-def calculate_accuray(data, category):
+def calculate_accuracy(data, category):
   acc_metric = data.groupby(category).mean()["Accurate"]
   return acc_metric
   
@@ -21,7 +22,7 @@ st.title('Titanic ML Project Analysis')
 # Dropdown menu
 selected_category = st.selectbox('Select a category:', ['Sex', 'Pclass'])
 # Calculate accuracy based on the selected category
-group_acc_metric = calculate_accuray(df, selected_category)
+group_acc_metric = calculate_accuracy(df, selected_category)
 # Display results
 st.write(f'Total Accuracy: {total_acc}')
 st.write(f'Per-{selected_category} Accuracy: {group_acc_metric}')
