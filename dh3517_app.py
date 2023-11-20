@@ -27,5 +27,5 @@ acc_metric = calculate_accuracy(df, selected_category)
 # Display results
 st.write(f'Total Accuracy: {total_acc}')
 for i in range(acc_metric.shape[0]):
-    st.write({acc_metric.index[i], ' Accuracy: ', {acc_metric[i]})
+    st.write(acc_metric.index[i], ' Accuracy: ', {acc_metric[i]})
 
