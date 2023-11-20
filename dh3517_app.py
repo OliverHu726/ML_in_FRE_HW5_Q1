@@ -11,13 +11,13 @@ for n in range(len(df)):
         Accurate_status.append(1)
     else:
         Accurate_status.append(0)
-df['Accurate'] = Accurate_status
-df['Pclass'] = df['Pclass'].astype(str)
+df["Accurate"] = Accurate_status
+df["Pclass"] = df["Pclass"].astype(str)
 total_acc = sum(Accurate_status) / len(Accurate_status)
 
 def calculate_accuracy(data, category):
-  acc_metric = data.groupby(category).mean()["Accurate"]
-  return acc_metric
+  metric = data.groupby(category).mean()["Accurate"]
+  return metric
   
 st.title('Titanic ML Project Analysis')
 # Dropdown menu
