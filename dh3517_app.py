@@ -16,7 +16,7 @@ df["Accurate"] = Accurate_status
 total_acc = sum(Accurate_status) / len(Accurate_status)
 
 def calculate_accuracy(category):
-  acc_metric = df.groupby(category).mean()["Accurate"]
+  acc_metric = df.groupby(category)['Accurate'].mean()
   return acc_metric
   
 st.title('dh3517_ML_in_FRE_HW5_Q1')
